@@ -1,0 +1,9 @@
+.dir{
+    color: blue;
+    cursor: pointer;
+}
+
+.file{
+	color: green;
+    cursor: pointer;	
+}

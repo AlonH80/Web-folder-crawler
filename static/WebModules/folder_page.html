@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="static/WebModules/folder_page.css">
+    <script src="static/WebModules/jquery-3.4.1.min.js"></script>
+    <script src="static/WebModules/FileSaver.js"></script>
+    <script src="static/WebModules/folder_page.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ directory }}</title>
+</head>
+<body>
+    <div class="dir" onclick=request_folder("{{ directory+".." }}")>..</div>
+    {% for file in dir_list %}
+    <div class="dir" onclick=request_folder("{{ directory+file }}")>{{ file }}</div>
+    {% endfor %}
+    {% for file in files_list %}
+    <div class="file" onclick=download_file("{{ directory+file }}")>{{ file }}</div>
+    {% endfor %}
+    <pre id="file_content"></pre>
+</body>
+</html>
