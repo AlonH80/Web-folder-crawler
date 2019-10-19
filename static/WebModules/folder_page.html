@@ -9,13 +9,25 @@
     <title>{{ directory }}</title>
 </head>
 <body>
-    <div class="dir" onclick=request_folder("{{ directory+".." }}")>..</div>
-    {% for file in dir_list %}
-    <div class="dir" onclick=request_folder("{{ directory+file }}")>{{ file }}</div>
-    {% endfor %}
-    {% for file in files_list %}
-    <div class="file" onclick=download_file("{{ directory+file }}")>{{ file }}</div>
-    {% endfor %}
-    <pre id="file_content"></pre>
+    <div>
+        <!--<img src="static/WebModules/back_image.jpg" id="bg">-->
+        <div class="dir" onclick=request_folder("{{ directory+".." }}")>
+        <img src="static/WebModules/folder_icon.jpg" height="30px" width="30px">
+        ..
+        </div>
+        {% for file in dir_list %}
+        <div class="dir" onclick=request_folder("{{ directory+file }}")>
+        <img src="static/WebModules/folder_icon.jpg" height="30px" width="30px">
+        {{ file }}
+        </div>
+        {% endfor %}
+        {% for file in files_list %}
+        <div class="dir" onclick=download_file("{{ directory+file }}")>
+        <img src="static/WebModules/text_icon.jpg" height="20px" width="20px">
+        {{ file }}
+        </div>
+        {% endfor %}
+        <pre id="file_content"></pre>
+    </div>
 </body>
 </html>
